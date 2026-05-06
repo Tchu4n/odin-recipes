@@ -1,3 +1,21 @@
+:root {
+    /* Paleta Catppuccin Mocha */
+    --crust: #11111b;
+    --mantle: #181825;
+    --base: #1e1e2e;
+    --surface0: #313244;
+    --surface1: #45475a;
+    --surface2: #585b70;
+    --text: #cdd6f4;
+    --subtext0: #a6adc8;
+    --subtext1: #bac2de;
+    --peach: #fab387; /* Destaques primários (combina com tema de comida) */
+    --green: #a6e3a1; /* Sucesso/Ações secundárias */
+    --blue: #89b4fa; /* Links */
+    --lavender: #b4befe; /* Títulos secundários */
+    --red: #f38ba8;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -5,131 +23,134 @@
 }
 
 body {
-    background: radial-gradient(circle at top left, #d4f0ff, #ffffff),
-                linear-gradient(135deg, #a1e2a1 0%, #7db9e8 100%);
-    background-blend-mode: overlay;
-    background-attachment: fixed;
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-    color: #1a3644;
+    background-color: var(--base);
+    color: var(--text);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     line-height: 1.6;
+    display: flex;
+    justify-content: center;
+    padding: 2rem 1rem;
 }
 
 .container {
-    max-width: 900px;
-    margin: 40px auto;
-    padding: 30px;
-    background: rgba(255, 255, 255, 0.45);
-    border: 1px solid rgba(255, 255, 255, 0.8);
-    border-radius: 12px;
-    box-shadow: 
-        0 8px 32px rgba(31, 38, 135, 0.15),
-        inset 0 0 15px rgba(255, 255, 255, 0.6);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    background-color: var(--surface0);
+    max-width: 800px;
+    width: 100%;
+    padding: 2.5rem;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px var(--crust);
+}
+
+header {
+    margin-bottom: 2rem;
 }
 
 .faixa {
-    width: 100%;
-    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.9) 0%, rgba(230, 245, 255, 0.7) 100%);
-    border: 1px solid rgba(255, 255, 255, 0.9);
-    border-radius: 8px;
-    padding: 10px;
+    background-color: var(--mantle);
+    padding: 1.5rem;
+    border-radius: 12px;
     display: flex;
     justify-content: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-    margin-bottom: 25px;
+    align-items: center;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .logo {
     width: 150px;
-    max-width: 100%;
     height: auto;
     border-radius: 8px;
-    mix-blend-mode: multiply;
+    transition: transform 0.2s ease;
 }
 
-.button {
-    display: inline-block;
-    padding: 8px 20px;
-    margin: 15px 0;
-    font-size: 14px;
-    font-weight: bold;
-    color: #0b405e;
-    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.8);
-    background: linear-gradient(to bottom, #ffffff 0%, #e0f0fa 45%, #bce0f9 50%, #eef7fc 100%);
-    border: 1px solid #7ea8c4;
-    border-radius: 20px;
-    box-shadow: 
-        inset 0 1px 2px rgba(255, 255, 255, 1),
-        0 2px 4px rgba(0, 0, 0, 0.2);
-    cursor: pointer;
-    transition: all 0.2s ease;
+.logo:hover {
+    transform: scale(1.05);
 }
 
-.button:hover {
-    background: linear-gradient(to bottom, #ffffff 0%, #f0f8fc 45%, #d1edfa 50%, #fdfefe 100%);
-    box-shadow: 
-        inset 0 1px 2px rgba(255, 255, 255, 1),
-        0 3px 6px rgba(0, 100, 200, 0.3);
-    border-color: #5b96bb;
-}
-
-.button:active {
-    background: linear-gradient(to bottom, #bce0f9 0%, #e0f0fa 100%);
-    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.15);
-}
-
-img, image {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: 25px auto;
-    border: 5px solid rgba(255, 255, 255, 0.8);
-    border-radius: 10px;
-    box-shadow: 
-        0 6px 15px rgba(0, 0, 0, 0.15),
-        inset 0 0 0 1px rgba(255, 255, 255, 0.5);
-}
-
-.foodimg {
-    max-height: 500px;
-    object-fit: cover;
-}
-
+/* Tratamento da tag <head> usada incorretamente no body como título de seção */
 body head {
     display: block;
-    font-size: 1.6em;
-    font-weight: 600;
-    color: #064b73;
-    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.9);
-    margin-top: 30px;
-    margin-bottom: 15px;
-    border-bottom: 2px solid rgba(255, 255, 255, 0.6);
-    padding-bottom: 5px;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--peach);
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--surface2);
 }
 
 p {
-    margin-bottom: 20px;
-    font-size: 16px;
-    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.6);
+    color: var(--subtext1);
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
 }
 
 ul, ol {
-    margin: 10px 0 20px 40px;
-    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.6);
+    margin-left: 1.5rem;
+    margin-bottom: 2rem;
+    color: var(--text);
 }
 
 li {
-    margin-bottom: 8px;
+    margin-bottom: 0.5rem;
+    padding-left: 0.5rem;
+}
+
+li::marker {
+    color: var(--peach);
+}
+
+img, .foodimg {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin: 1.5rem 0;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.button {
+    background-color: var(--surface1);
+    color: var(--text);
+    border: 2px solid var(--surface2);
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem 0;
+}
+
+.button:hover {
+    background-color: var(--peach);
+    border-color: var(--peach);
+    color: var(--crust);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(250, 179, 135, 0.2);
+}
+
+.button:active {
+    transform: translateY(0);
 }
 
 a {
-    color: #0066cc;
+    color: var(--blue);
     text-decoration: none;
-    font-weight: bold;
+    font-weight: 500;
+    transition: color 0.2s ease;
 }
 
 a:hover {
+    color: var(--lavender);
     text-decoration: underline;
-    color: #004499;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 4px;
+}
+
+/* Remove margin de botões dentro de links para alinhar corretamente */
+a .button {
+    margin: 0;
 }
